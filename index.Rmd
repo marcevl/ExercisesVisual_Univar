@@ -6,9 +6,20 @@
 ### Prof. José Manuel Magallanes, PhD 
 
 _____
-<a id='part1'></a>
+
+```{r}
+link='https://github.com/EvansDataScience/VisualAnalytics_2_tabularData/raw/master/data/eduwa.rda'
+load(file=url(link))
+```
 
 #Exercise 1
+
+```{r}
+absoluteT=table(eduwa$LocaleType,exclude = 'nothing')
+ToPlot=prop.table(absoluteT)
+names(ToPlot)[5]='Unknown'
+```
+
 
 ```{r ggplot1, eval=TRUE}
 
@@ -36,6 +47,9 @@ tableFreq1=tableFreq[order(tableFreq$pct),]
 
 
 ```{r ggplot_base, eval=TRUE}
+
+titleText2 = 'Are all locations getting a fair share of public schools in WA?'
+
 base= ggplot(data = tableFreq1, 
              aes(x = reorder(locale,pct),
                  y = pct)) 
