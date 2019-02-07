@@ -206,7 +206,7 @@ hist4
 hist5 = hist4 + scale_x_continuous(breaks = c(10,12,14,16,18,20,22,24), limits = c(10,24)) +
                     scale_y_continuous(breaks = c(0,5,10,15,20), limits = c(0,20))
 
-hist6 = hist5 + geom_vline(aes(xintercept = mean(stratiodf$meanValues), color="mean"), 
+hist6 = hist5 + geom_vline(aes(xintercept = mean(table$meanValues), color="mean"), 
                                size = 1, linetype = "dashed")
 
 hist7 = hist6 + theme(legend.title = element_blank()) +
@@ -238,9 +238,9 @@ Den3 = Den2 + theme(panel.background = element_rect(fill = "white", color = "gre
 
 Den4 = Den3 + scale_x_continuous(breaks = c(8,10,12,14,16,18,20,22,24,26), limits = c(8,26))
 
-Den5 = Den4 + geom_vline(aes(xintercept = mean(stratiodf$meanValues), color="mean"), 
+Den5 = Den4 + geom_vline(aes(xintercept = mean(table$meanValues), color="mean"), 
                                size = 1, linetype = "dashed") +
-                  geom_vline(aes(xintercept = median(stratiodf$meanValues), color="median"),
+                  geom_vline(aes(xintercept = median(table$meanValues), color="median"),
                                size = 1, linetype = "dashed", show.legend = TRUE)
 
 Den6 = Den5 + theme(legend.title = element_blank()) +
